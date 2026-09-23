@@ -37,3 +37,8 @@ secrets.json
 .idea/
 .DS_Store
 Thumbs.db
+
+# Local staging / scratch (never publish)
+*.pending
+_scratch/
+
