@@ -1,0 +1,19 @@
+# Normalise line endings instead of letting each platform guess.
+# Without this, a Windows checkout rewrites every file to CRLF and the diffs from a
+# Linux contributor show the whole file as changed.
+* text=auto eol=lf
+
+# Windows-only helpers keep their native endings
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary — never touch
+*.png binary
+*.jpg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+
+# Keep generated/vendored noise out of diffs and language stats
+*.lock linguist-generated=true

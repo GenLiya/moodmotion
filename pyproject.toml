@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moodmotion"
+version = "0.1.0"
+description = "Continuous mood state for conversational agents: two dimensions, decaying, persistent, and unafraid of silence."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["llm", "agent", "affective-computing", "mood", "persona", "chatbot"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Typing :: Typed",
+]
+# No required runtime dependencies on purpose: the core is pure stdlib
+# (sqlite3 + math + json), so it drops into any stack without a resolution step.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+moodmotion = "moodmotion.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/GenLiya/moodmotion"
+Repository = "https://github.com/GenLiya/moodmotion"
+Issues = "https://github.com/GenLiya/moodmotion/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
